@@ -1,0 +1,26 @@
+ @charset "utf-8";
+ 
+ /* reset */
+ body, div, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, table, th, td {padding: 0; margin: 0;}
+ ul, ol, li {list-style: none;}
+ h1, h2, h3, h4, h5, h6, strong {font-size: 16px; font-weight: normal;}
+ img {vertical-align: middle;}
+ a {text-decoration: none; color: black;}
+
+ /* base */
+ body {
+  font-size: 16px;
+  /* font-family: ; */
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+  font-size: 1.2rem;
+ }
+
+ /* header */
+ /* footer */
+
+ /* 모바일기준 최소 500px 이상부터 */
+ @media screen and (min-width: 501px) {}
+ /* PC기준 최대 500px 이하부터 */
+ @media screen and (max-width: 501px) {}
