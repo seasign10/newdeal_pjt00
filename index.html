@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./src/favicon.png">
   <title>여행은 모두투어</title>
   <script src="https://kit.fontawesome.com/e7c9242ec2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./styles/common.css">
@@ -24,9 +25,6 @@
         <li></li>
         <li></li>
       </ul>
-      <!-- position: absolute -->
-      <span class="prev_btn"></span>
-      <span class="next_btn"></span>
     </nav>
   </header>
 
@@ -34,54 +32,161 @@
   <div class="container">
     <!-- 기능구현 우선 | 이미지 3개까지 -->
     <!-- position 사용해야 할 듯 -->
-    <div class="banner"></div>
+    <div class="banner">
+
+      <!-- position: absolute -->
+      <span class="prev_btn"></span>
+      <span class="next_btn"></span>
+    </div>
 
     <!-- 최대한 float X | display: flex 사용 > 이후 반응형을 위함 -->
     <!-- content 4개 -->
     <!-- slide | nowrap -->
     <!-- 모두의 추천상품 -->
-    <div class="reco"></div>
-
+    <div class="reco">
+      <h1>모두의 추천상품</h1>
+    </div>
+    
     <!-- 최신 정보 -->
-    <div class="news"></div>
+    <div class="news">
+      <h1>모든순간 두근두근</h1>
+      <h1>모두투어에서 만나보는 최신 정보</h1>
+    </div>
 
     <!-- 초특가 -->
-    <div class="sale"></div>
+    <div class="sale">
+      <h1>[도전!초특가] 하이난 시내특급 VS 맹글로브리조트</h1>
+    </div>
 
     <!-- 지금 모두에서는 -->
-    <div class="now"></div>
+    <div class="now">
+      <h1>지금 모두에서는</h1>
+    </div>
 
-    <div class="liveM"></div>
+    <div class="liveM">
+      <h1>LIVE M</h1>
+    </div>
 
     <!-- 최신 여행 트렌드는? -->
-    <div class="trend"></div>
+    <div class="trend">
+      <h1>최신 여행 트렌드는?</h1>
+    </div>
 
     <!-- 이미지 -->
-    <div class="mid_banner"></div>
+    <div class="mid_banner">
+      <img src="" alt="와이파이 도시락">
+      <img src="" alt="면세점 혜택 모음">
+    </div>
 
     <!-- 요즘 여행가는 사람들은 '여기' 가요 -->
-    <div class="here"></div>
+    <div class="here">
+      <h1>요즘 여행가는 사람들은 '여기' 가요.</h1>
+    </div>
 
     <!-- 홈쇼핑 판매 best5 -->
-    <div class="best5"></div>
+    <div class="best5">
+      <h1>홈쇼핑 판매 BEST5</h1>
+    </div>
 
     <!-- 이런 여행 어때요? -->
-    <div class="reco2"></div>
+    <div class="reco2">
+      <h1>이런 여행 어때요?</h1>
+    </div>
 
     <!-- 모두투어 컨셉투어 | 이미지 -->
-    <div class="mid_banner2"></div>
+    <div class="mid_banner2">
+      <img src="" alt="모두투어 컨셉투어">
+    </div>
 
     <!-- playlist -->
     <div class="pli"></div>
   </div>
 
   <!-- 하단 -->
-  <footer></footer>
+  <footer id="footer">
+    <!-- 하단/상 -->
+    <div class="bottom_top">
+      <!-- 하단/상/왼쪽 -->
+      <div class="bot_top_left">
+        <div class="phone_num1">
+          <div class="nums">
+            <p>여행 상담센터</p>
+            <a href="#"><div class="headset_icon"></div>1544-5252</a>
+          </div>
+          <div class="nums">
+            <p>해외/국내 항공상담</p>
+            <a href="#"><div class="headset_icon"></div>1544-5353</a>
+          </div>
+          <div class="nums">
+            <p>부산/대구출발 여행상담</p>
+            <a href="#"><div class="headset_icon"></div>1544-6277</a>
+          </div>
+          <div class="nums">
+            <p>기업행사/출장문의</p>
+            <a href="#"><div class="headset_icon"></div>1661-4873</a>
+          </div>
+        </div>
+        <div class="phone_num2">
+          <p>고객센터</p>
+          <a href="#"><div class="headset_icon"></div>080-850-5252</a>
+        </div>
+      </div>
+      <!-- 하단/상/오른쪽 -->
+      <div class="bot_top_right">
+        <div class="consult_num">
+          <div class="coun_box ftt">ARS 상담번호 안내<a>상세보기<div class="next_icon"></div></a></div>
+          <div class="coun_box ftt">여행 상담센터 주요 서비스 안내</div>
+          <div class="coun_box">
+            <div class="ftt">
+              <p>1번</p>
+              <div class="couns_text">
+                <p>해외여행상담</p>
+                <ol>
+                  <li>해외패키지</li>
+                  <li>허니문</li>
+                  <li>에어텔</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="coun_box">
+            <div class="ftt">
+              <p>2번</p>
+              <div class="couns_text">
+                <p>해외항공권</p>
+              </div>
+            </div>
+          </div>
+          <div class="coun_box">
+            <div class="ftt">
+              <p>1번</p>
+              <div class="couns_text">
+                <p>> 누른 후 4번<br>해외호텔, 패스 문의</p>
+                <ol>
+                  <li>해외호텔</li>
+                  <li>패스</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="coun_box"></div>
+        </div>
+        <div class="consult_time"></div>
+      </div>
+    </div>
+
+    <!-- 하단/중 -->
+    <div class="bottom_mid"></div>
+
+    <!-- 하단/하 -->
+    <div class="bottom_bot">
+      <div class="bot_top"></div>
+      <div class="bot_bot"></div>
+    </div>
+  </footer>
 
   <!-- scroll up button -->
-  <span class="scrollUp_btn">
-    <img src="" alt="">
-  </span>
+  <span class="scrollUp"></span>
 </body>
 
 </html>
