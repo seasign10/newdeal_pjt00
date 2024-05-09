@@ -11,22 +11,77 @@
 <body>
   <!-- 기원 -->
   <!-- 상단 -->
-  <header>
-    <div class="search"></div>
-    <div class="mem_bar"></div>
-    <nav>
-      <ul>
-        <div class="menu"></div>
-        <li>
-          <div class="all_menu"></div>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </nav>
+  <header id="header">
+    <div class="header_top">
+      <!-- 로고, 검색창,인기 검색어, membar -->
+      <div class="logo">
+        <ul>
+          <li><img src="/Users/choegiwon/Desktop/SeoulNewDealTeam/src/header_logo2.png"></li>
+          <li><img src="/Users/choegiwon/Desktop/SeoulNewDealTeam/src/header_logo1.png"></li>
+          <li><img src="/Users/choegiwon/Desktop/SeoulNewDealTeam/src/header_logo3.png"></li>
+        </ul>
+      </div>
+
+      <div class="search"></div>
+      <form class="search_box" action="" method="get">
+        <input class="search_txt" type="text" name="" placeholder="검색어를 입력해 주세요">
+        <button class="search_btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <div class="popular_s">
+        <h2>인기검색어</h2>
+        <ul>
+          <li>1 스페인</li>
+          <li>2 홍콩/마카오</li>
+          <li>3 코타키나발루</li>
+          <li>4 시드니</li>
+          <li>5 싱가포르</li>
+        </ul>
+        <span><i class="fa-solid fa-chevron-down"></i></span>
+      </div>
+
+      <div class="mem_bar">
+        <ul>
+          <!--알림/웰컴쿠폰/로그인/예약내역-->
+          <li><i class="fa-regular fa-bell"></i>
+            <p>알림</p>
+          </li>
+          <li><i class="fa-solid fa-ticket"></i>
+            <p>웰컴쿠폰</p>
+          </li>
+          <li><i class="fa-regular fa-user"></i>
+            <p>로그인</p>
+          </li>
+          <li><i class="fa-regular fa-calendar"></i>
+            <p>예약내역</p>
+          </li>
+        </ul>
+      </div>
+      <!-- header top끝 -->
+
+      <nav>
+        <ul class="nav_l">
+          <div class="menu">
+          </div>
+          <li><i class="fa-solid fa-bars"></i></li>
+          <li>
+            <span>
+              <div class="all_menu">전체메뉴</div>
+          </li></span>
+          <li>해외여행</li>
+          <li>국내여행</li>
+          <li>항공</li>
+          <li>호텔</li>
+          <li>투어/패스</li>
+        </ul>
+        <ul class="nav_r">
+          <li>기획전</li>
+          <li>이벤트</li>
+          <li>고객센터</li>
+        </ul>
+      </nav>
   </header>
 
   <!-- 중단 -->
@@ -40,13 +95,24 @@
       <span class="next_btn"></span>
     </div>
 
-    <!-- 최대한 float X | display: flex 사용 > 이후 반응형을 위함 -->
-    <!-- content 4개 -->
-    <!-- slide | nowrap -->
-    <!-- 모두의 추천상품 -->
-    <div class="reco">
-      <h1>모두의 추천상품</h1>
-    </div>
+<!-- 최대한 float X | display: flex 사용 > 이후 반응형을 위함 -->
+<!-- content 4개 -->
+<!-- slide | nowrap -->
+<!-- 모두의 추천상품 -->
+<div class="reco">
+  <h1>모두의 추천상품</h1>
+  <ul class="reco_li">
+    <li>1<div class="reco_img"></div>
+      <div class="reco_p">해외여행</div>
+    </li>
+    <li>2<div class="reco_img"></div>
+      <div class="reco_p">해외여행</div>
+    </li>
+    <li>3<div class="reco_img"></div>
+      <div class="reco_p">해외여행</div>
+    </li>
+  </ul>
+</div>
     
     <!-- 최신 정보 -->
     <div class="news">
@@ -126,7 +192,7 @@
 
     <!-- 모두투어 컨셉투어 | 이미지 -->
     <div class="mid_banner2">
-      <img src="./src/mid_banner2_1.png" alt="모두투어 컨셉투어">
+      <a href="#"><img src="./src/mid_banner2_1.png" alt="모두투어 컨셉투어"></a>
     </div>
 
     <!-- playlist -->
