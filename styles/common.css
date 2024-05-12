@@ -321,6 +321,110 @@
 	border-radius: 10px;
 }
 
+
+
+
+/* here -해인- */
+.container .here {
+  width: 100%;
+  height: 560px;
+  padding: 100px 0;
+  background-color: #f5f6f6;
+  margin-top: 130px;
+}
+.container .here .content_title {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container .here .here_content{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  height: 440px;
+}
+.container .here .here_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+
+  /* 부모너비(100%) - 1200px(현재 html에서 사용하는 태그 평균 너비) */
+  /* 1200px보다 클 경우 남는 공간을 2로나눈 값으로 padding 양쪽 분배하되 왼쪽에만 패딩값을 주겠다는 의미 */
+  /* 이는 중앙 정렬에 도움을 줌 : 특히 고정된 너비를 가진 컨테이너를 가운데 정렬하고자 자주 사용 */
+  /* calc : css의 속성값을 계산하기위해 사용 | 다양한 단위 조합(%, rem, px...)을 사용하여 계산을 수행할 수 있게 해줌. */
+  padding-left: calc((100% - 1200px) / 2);
+}
+.container .here .here_left>span{
+  display: flex;
+  justify-content: space-between;
+  width: 153px;
+  padding: 1.3rem 24px;
+  border-radius: 80px;
+  color: #fff;
+  background-color: #00000081;
+  
+}
+.container .here .here_left .on{
+  background-color: #009c7569;
+}
+.container .here .background_relative{
+  position: relative;
+  max-width: 1200px;
+  
+}
+.gradient_background {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
+  width: 10%; /* 필요한 경우 조절 */
+  height: 100%; /* 필요한 경우 조절 */
+}
+.container .here .here_right_box{
+  overflow: scroll;
+  display: flex;
+  /* align-items: center; */
+  height: 440px;
+  margin-left: 200px;
+  max-width: 1200px;
+}
+.container .here .here_right{
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+.container .here .here_right>p{
+  margin: 1rem ;
+}
+.container .here .here_right>p:nth-child(2){
+  font-size: 24px;
+  font-weight: bold;
+}
+.container .here .here_right .here_table{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  width: 458px;
+  height: 256px;
+}
+.container .here .here_right .here_table .here_table_img{
+  background-color: pink;
+  border-radius: 10px;
+  margin: 4px;
+}
+.container .here .here_right .here_table .here_table_img:first-child{
+  grid-row: 1 / 3;
+}
+
+
+
+
+
+
+
+
+
 /* best5 */
 .container .best5 {
   width: 1200px;
