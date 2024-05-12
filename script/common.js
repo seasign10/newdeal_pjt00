@@ -60,8 +60,8 @@ dragSlide.addEventListener('mousedown', (e)=>{
 
   // offsetLeft 해당 부모(relative)요소에서 왼쪽기준 얼마나 떨어져있는지 값을 반환
   // > 여기서는 margin: 0 auto; 이므로, 창의 크기에 따라 달라지는 마진값을 그대로 받는다.
-  // 즉, 순수한 내부 위치를 정확히 알 수 있다.
-  console.log(dragSlide.offsetLeft);
+  // 즉, 순수한 내부 위치를 left(X축)기준 정확히 알 수 있다.
+  // console.log(dragSlide.offsetLeft);
   startPoint = e.pageX - dragSlide.offsetLeft;
 
   // 마우스가 이동한 만큼의 scrollLeft(px)값이 들어감.
@@ -107,8 +107,8 @@ dragSlide.addEventListener('mousemove', (e)=>{
   dragSlide.scrollLeft = scrollLefts - move;
 });
 
-
-// pli slides ================================================================================
+// =================================== End reco5 drag slide =======================================
+// pli slides =====================================================================================
 const slides = document.querySelector('.slides');
 const slide = document.querySelectorAll('.slides li');
 const slideCnt = slide.length;
@@ -244,4 +244,32 @@ function returnLocation() {
 //   }
 // };
 //=============================================End pli slide============================================
+//scrollUp==============================================================================================
+function scrollTop(){
+  // window : 해당 객체는 브라우저 창을 대표, 브라우저 탭 하나하나가 window를 가지고 있음|전역 js 객체|document객체를 포함하고 있음
+  // document : 웹페이지 자체를 대표. window.document 를 통해서도 접근 가능
+  window.scrollTo({
+    // top:0; 까지
+    top: 0,
+    // 부드럽게 이동
+    behavior: 'smooth'
+  });
+};
 
+console.log(document.body);
+// 스크롤 위치에 따라 버튼의 표시 여부 결정
+function toggleScrollBtn(){
+  const scrollUpBtn = document.querySelector('.scroll_up');
+  // scrollLeft와 마찬가지로 scrollTop도 px 단위
+  if(document.body.scrollTop>80 || document.documentElement.scrollTop>80){
+    scrollUpBtn.style.display = 'block';
+  }else{
+    scrollUpBtn.style.display = 'none';
+  }
+};
+
+window.onscroll = function(){
+  toggleScrollBtn();
+};
+
+document.getElementById('scroll_up').addEventListener('click', scrollTop);
