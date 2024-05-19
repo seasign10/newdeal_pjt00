@@ -1,3 +1,80 @@
+
+
+// HERE =====================================================================================================================
+// here selected ===================
+const selectedHereMenu = document.querySelectorAll('.here_left span');
+const onHereBox = document.querySelectorAll('.here_right_box');
+
+// 초기화 함수
+function initializeFeature(){
+  const activeHereSlide = document.querySelector('.here .here_right_box.on');
+  // console.log(activeHereSlide);
+  if (activeHereSlide){ // querysellector로 찾는 값이 존재하면, 발동
+    addDragEventListeners(activeHereSlide)
+  }
+}
+
+// 클릭할 버튼에 forEach와 addEvantListner
+selectedHereMenu.forEach((span, index)=> {
+  span.addEventListener('click', ()=>{
+    console.log('클래스 지우고, 새로 추가하기');
+    for(i=0;i<selectedHereMenu.length;i++){
+      selectedHereMenu[i].className = '';
+      onHereBox[i].classList.remove('on');
+    }
+    span.className = 'selected';
+    onHereBox[index].classList.add('on');
+
+    // // 클릭 이벤트 발생 시 .on 요소 재탐색
+    // // 전역변수로 저장 한번만 할 시, 첫번째 box에만 slide가 적용되기 때문임 (조건을 만족하는 첫번째, 한 가지의 구조를 가져와서 변함이 없기 때문)
+    // let updatedDragHereSlide = document.querySelector('.here .here_right_box.on');
+    // // 새롭게 탐색된 요소에 드래그 이벤트 리스터 추가
+    // addDragEventListeners(updatedDragHereSlide);
+    // 위의 코드를 함수로 묶어 페이지가 리로드 될때, 클릭이벤트가 생길때 두 상황에서 함수를 발동
+    // 현재는 클릭이벤트가 생길 때
+    initializeFeature();
+
+  });
+});
+
+// here drag ================
+let startPoint = 0;
+let isMouseDown = false;
+// const dragHereSlide = document.querySelector('.here .here_right_box.on');
+let scrollLefts = 0;
+
+// 함수를 사용하여 각 슬라이드에 이벤트 리스너 추가
+function addDragEventListeners(dragHereSlide) {
+// 마우스를 눌렀을 때 실행
+  dragHereSlide.addEventListener('mousedown', (e)=>{
+    isMouseDown = true;
+    dragHereSlide.classList.add('active');
+    startPoint = e.pageX - dragHereSlide.offsetLeft;
+    scrollLefts = dragHereSlide.scrollLeft; 
+  });
+  // 마우스를 뗐을 때 실행
+  dragHereSlide.addEventListener('mouseup', ()=>{
+    isMouseDown = false;
+    dragHereSlide.classList.remove('active');
+  });
+  // 마우스가 떠났을 때 실행
+  dragHereSlide.addEventListener('mouseleave',()=>{
+    isMouseDown = false;
+    dragHereSlide.classList.remove('active');
+  });
+  // 마우스가 움직일때 추적
+  dragHereSlide.addEventListener('mousemove', (e)=>{
+    if(!isMouseDown) return;
+    e.preventDefault();
+    const x =  e.pageX - dragHereSlide.offsetLeft;
+    const move = (x - startPoint)*1;
+    dragHereSlide.scrollLeft = scrollLefts - move;
+  });
+};
+
+// 페이지 로드시, queryselector 조건에 맞는 값을 가져온다.
+initializeFeature();
+// ================================= End here drag ===========================================
 // bets5 hover ===============================================================================
 const bestTh = document.querySelectorAll('.best_container .best_th');
 const thCont = document.querySelectorAll('.best_container .th_cont');
@@ -31,19 +108,22 @@ bestTh.forEach((item, index) => {
 // reco2 drag slide===========================================================================
 // 웹(PC) : mousedown|mouseup(드래그) / 모바일 : touchstart|touchend(스와이프)
 // 코드는 똑같이 짜도 되지만, 명령어가 다르기 때문에 각각 addEventListner를 사용해야 함.
-let startPoint = 0;
+// let startPoint = 0; // (위에 변수에 담아놨으므로 주석처리)
 // let endPoint = 0;
-// 드래그 중인지 아닌지 판별할 값
-let isMouseDown = false;
+// 드래그 중인지 아닌지 판별할 값 (위에 변수에 담아놨으므로 주석처리)
+// let isMouseDown = false;
+
 // 웹(PC)
 const dragSlide = document.querySelector('.reco2 .card_li');
-// console.log(dragSlide);
+
+// 이또한 pangenation 할때 쓰는게 좋을 것 같아서 주석처리
 // 슬라이드 전체 크기(clientWidth : 보더, 마진 불포함) | style로 불러오는것이 X
 // style 속성을 통해 접근하면 인라인 스타일로 설정된 속성값만 가져올 수 있으며, 대부분의 경우 원하는 값이 없어 undefined를 반환한다.
-let dragSlideWidth = dragSlide.clientWidth;
+// let dragSlideWidth = dragSlide.clientWidth;
+
 // 전역변수로 놓고 값을 바꿔준다. 참고로 부모요소가 스크롤이 가능한 상태여야 scrollLest값을 받아올 수 있다.
 // 즉, 부모보다 자식이 커야 함.
-let scrollLefts = 0; 
+// let scrollLefts = 0; // (위에 변수에 담아놨으므로 주석처리)
 
 // 마우스를 눌렀을 때 실행
 dragSlide.addEventListener('mousedown', (e)=>{
@@ -67,7 +147,7 @@ dragSlide.addEventListener('mousedown', (e)=>{
   // 마우스가 이동한 만큼의 scrollLeft(px)값이 들어감.
   scrollLefts = dragSlide.scrollLeft; 
   // console.log(`${scrollLefts} = ${dragSlide.scrollLeft}`)
-  return scrollLefts
+  // return scrollLefts
 });
 // 마우스를 뗐을 때 실행
 dragSlide.addEventListener('mouseup', ()=>{
@@ -256,7 +336,7 @@ function scrollTop(){
   });
 };
 
-console.log(document.body);
+// console.log(document.body);
 // 스크롤 위치에 따라 버튼의 표시 여부 결정
 function toggleScrollBtn(){
   const scrollUpBtn = document.querySelector('.scroll_up');

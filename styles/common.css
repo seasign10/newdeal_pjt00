@@ -22,9 +22,12 @@
    /* 창을 축소할 시, 요소 짤림 방지 */
    /* 최소 --px부터는 줄어들지 않겠다는 의미 */
    /* fit-content : 박스의 크기에 따라 콘텐츠의 크기도 따라감 */
-   min-width: fit-content;
-   min-height: fit-content;
-
+   /* min-width: fit-content; */
+   /* min-height: fit-content; */
+   
+   /* 생성된 컨텐츠들의 공통 부모너비가 있다면 min-width를 같은값으로 추가해보자. */
+   min-width: 1200px;
+   
    /* font */
    /* font-family: ; */
  }
@@ -75,18 +78,23 @@
    /* footer title */
    .ftt {font-weight: 700;font-size: 15px;}
 
+   .hidden{font-size: 0; width: 0; height: 0; z-index: -999;}
+
  /* base-end-------------------------------------------------------------------------- */
 
 
 
 
  /* header */
- #header {
+#header {
    position: relative;
-   width: 1200px;
+   width: 100%;
    height: 120px;
-   background-color: beige;
    padding-top: 22px;
+ }
+ #header .header_contain{
+  margin: 0 auto;
+  width: 1200px;
  }
  #header .header_top {
    display: flex;
@@ -94,21 +102,28 @@
    height: 44px;
    margin-left: auto;
    margin-right: auto;
-   background-color: azure
+   align-items: center;
+   justify-content: space-between;
  }
  #header .logo {
    width: 220px;
-   height: 80px;
+   height: 90px;
    display: flex;
    flex-wrap: norwap;
    overflow: hidden;
    margin-left: 20px;
- }
+  }
+  #header .logo>ul {
+    overflow: hidden;
+    width: 220px;
+    height: 79px;
+  }
 
  .logo li {
    display: flex;
    align-items: center;
    justify-content: center;
+   height: 79px;
  }
  .logo li i {
    width: 220px;
@@ -119,10 +134,9 @@
    width: 220px
  }
  .search_box {
-   height: 44px;
+   /* height: 44px; */
    width: 395px;
    margin-left: 42px;
-   background-color: #f5f6f6;
    border-radius: 22px;
    border: #f5f6f6;
  }
@@ -148,6 +162,8 @@
    display: flex;
    margin-right: 10px;
    margin-top: 10px;
+   background-color: #fff;
+   cursor: pointer;
  }
 
  .popular_s {
@@ -155,11 +171,17 @@
    width: 200px;
    height: 44px;
    margin-left: 40px;
-   /* padding-top: 15px; */
-   background-color: chartreuse;
+ }
+ .popular_s>span {
+  display: flex;
+  align-items: center;
+  color: #8a8f8e;
+}
+  .popular_s_ul{
+    overflow: hidden;
  }
 
- .popular_s h2 {
+ .popular_s>h2 {
    width: 57px;
    height: 44px;
    align-items: center;
@@ -167,43 +189,51 @@
    line-height: 15px;
    padding-top: 15px;
    white-space: norwrap;
+   font-weight: 700;
+   color: #8a8f8e;
  }
 
+ .popular_s ul li>span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+ }
  .popular_s ul li {
    font-size: 13px;
    margin-left: 20px;
    margin-right: 20px;
    padding-top: 15px;
-
- }
-
+   cursor: pointer;
+  }
+  .popular_s ul li:hover {
+    color: #009C75;
+  }
+  
  #header {
    position: relative;
  }
 
- .mem_bar ul {
+ .mem_bar {
    display: flex;
-   position: absolute;
-   right: 0;
-   margin-left: 10px;
+   padding-top: 1rem;
+   margin:0 1rem;
  }
 
 
 
- .mem_bar ul li {
+ .mem_bar li {
    padding-left: 10px;
    padding-right: 10px;
    text-align: center;
    height: 44px;
-   background-color: #e5e7eb;
+   cursor: pointer;
  }
 
 
- .mem_bar ul li i {
+ .mem_bar li i {
    font-size: 26px;
  }
 
- .mem_bar ul p {
+ .mem_bar p {
    text-align: center;
    line-height: 13px;
    font-size: 11px;
@@ -228,78 +258,360 @@
    font-size: 16px;
    display: flex;
    justify-content: space-between;
-   background-color: paleturquoise;
    align-items: center;
  }
 
 
 
- nav .nav_l {
+ nav .nav_menu {
    display: flex;
    margin-left: 13px;
    margin-right: 13px;
-   background-color: #e5e7eb;
- }
-
- nav .nav_r {
-   display: flex;
-   margin-left: 13px;
-   margin-right: 13px;
-   background-color: #e5e7eb;
- }
-
+  }
+  nav .nav_menu>li>i {
+    margin-right: 1rem;
+  }
+  nav .nav_menu>li.on {
+    color: #009C75;
+  }
+  nav .nav_menu>li:hover {
+    color: #009C75;
+    transition: color 0.3s ease;
+  }
+  nav .nav_r {
+    display: flex;
+    margin-left: 13px;
+    margin-right: 13px;
+  }
+  nav .nav_r li {
+    cursor: pointer;
+  }
+  nav .nav_r li:hover {
+    color: #009C75;
+    transition: color 0.3s ease;
+  }
  #header nav ul li {
    padding-left: 13px;
    padding-right: 13px;
    font-size: 16px;
    align-items: center;
+   cursor: pointer;
  }
-
-
-
-
-
-
-
 
  /* 중단 */
- .reco h1 {
-   width: 1200px;
-   height: 35px;
-   margin-bottom: 40px;
-   font-weight: bold;
-   background-color: bisque;
+ /* banner_btn */
+ .container .banner .prev_btn:hover{
+  background-color: #009c75;
  }
- .reco_li {
-   width: 1200px;
-   height: 534px;
-   font-size: 30px;
-   display: flex;
-   background-color: gray;
+ .container .banner .prev_btn{
+  position: absolute;
+  left: 0;
+  bottom: -5rem;
+  background-color: #0d4a3b;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.container .banner .next_btn:hover{
+ background-color: #009c75;
+}
+.container .banner .next_btn{
+  position: absolute;
+  left: 3rem;
+  bottom: -5rem;
+  background-color: #0d4a3b;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  font-size: 20px;
+  cursor: pointer;
  }
- .reco_li li {
-   width: 430px;
-   height: 532px;
-   border-radius: 10px;
-   background-color: #e5e7eb;
-   border: 1px solid #1f2120;
-   position: relative;
-   margin-right: 24px;
+ .container .banner_btn {
+  position: relative;
+  margin-left: 10%;
+  margin-top: 12rem;
  }
- .reco_li li .reco_img {
+
+/* bannenr */
+ .container .banner .banner_title{
    position: absolute;
-   top: 0;
-   width: 430px;
-   height: 256px;
-   border: 1px solid #1f2120
- }
- .banner {
-   width: 1200px;
-   height: 600px;
-   background-color: lightskyblue;
- }
+   left: 15%;
+   top: 30%;
+   color: white;
+   font-weight: 900;
+   font-size: 44px;
+  }
+  .container .banner .banner_title>p>span{
+    color: rgb(216, 216, 128);
+  }
+ .container .banner{
+   width: 100%;
+   height: 624px;
+   position: relative;
+  }
+  .container .banner_line{
+    background-color: #be4a4a;
+    width: 100%;
+    z-index: -1;
+    height: 70%;
+  }
+  .container .banner_cont{
+    background: url('../src/banner5.jpg')no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0%;
+    height: 100%;
+    max-width: 100%;
+    min-width: 80%;
+  }
+
+  /* reco1 */
+.container .reco {
+  width: 100%;
+  margin: 8rem 0;
+}
+.container .reco_contain {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container .reco .reco_ul{
+  padding: 1rem;
+  display: flex;
+  overflow: auto;
+  position: relative;
+}
+.container .reco .reco_ul::-webkit-scrollbar{
+  display: none;
+}
+.container .reco .reco_li{
+  margin-right: 2rem;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container .reco .reco_li:first-child .reco_img{
+  width: 430px;
+  height: 256px;
+  background: url('../src/reco4.png');
+  background-size: 430px 256px;
+  border-radius: 10px 10px 0 0;
+}
+.container .reco .reco_li:nth-child(2) .reco_img{
+  width: 430px;
+  height: 256px;
+  background: url('../src/reco1.png');
+  background-size: 430px 256px;
+  border-radius: 10px 10px 0 0;
+}
+.container .reco .reco_li:nth-child(3) .reco_img{
+  width: 430px;
+  height: 256px;
+  background: url('../src/reco2.png');
+  background-size: 430px 256px;
+  border-radius: 10px 10px 0 0;
+}
+.container .reco .reco_li:nth-child(4) .reco_img{
+  width: 430px;
+  height: 256px;
+  background: url('../src/reco2.png');
+  background-size: 430px 256px;
+  border-radius: 10px 10px 0 0;
+}
+.container .reco .reco_li .reco_p{
+  width: 370px;
+  height: 272;
+  padding: 30px;
+  border-radius: 0 0 10px 10px;
+}
+.container .reco .reco_li .reco_p>p{
+  margin-bottom: 0.5rem;
+}
+.container .reco .reco_li .reco_p>p:first-child{
+  color: #009C75;
+  font-size: 18pz;
+}
+.container .reco .reco_li .reco_p>p:nth-child(2){
+  font-size: 24px;
+  font-weight: bold;
+}
+.container .reco .reco_li .reco_p>p:nth-child(3){
+  font-size: 17px;
+  color: #6e7170;
+}
+.container .reco .reco_li .reco_p>p:nth-child(4){
+  font-size: 26px;
+  font-weight: 900;
+  text-align: end;
+}
+.container .reco .reco_li .reco_p>p:nth-child(4)>span{
+  font-weight: normal;
+}
+.container .reco .reco_ul>.prev_btn{
+  position: absolute;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  color: #dfdfdf;
+  left: 1rem;
+  top: 50%;
+}
+.container .reco .reco_ul>.next_btn{
+  position: absolute;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  color: #dfdfdf;
+  right: 0;
+  top: 50%;
+}
+/* 버튼 활성화  */
+.container .reco .reco_ul>.active:hover{
+  border: 0px none;
+  background-color: #00000099;
+  cursor: pointer;
+  color: #fff;
+}
 
 
+
+/* news */
+.container .news {
+  margin: 5rem 0;
+  width: 100%;
+}
+.container .news_contain {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container .news_top{
+  display: flex;
+}
+.container .news_bottom{
+  display: flex;
+}
+.container .news_bot_right{
+  display: flex;
+}
+.container .news_bot_right>li img{
+  width: 140px;
+  height: 140px;
+}
+
+
+
+/* sale */
+.container .sale {
+  width: 100%;
+  margin: 5rem 0;
+}
+.container .sale_contain {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+/* now */
+.container .now {
+  width: 100%;
+}
+.container .now .now_contain {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container .now .now_slide {
+  display: flex;
+  align-items: center;
+}
+.container .now .now_slide li{
+  margin: 0 1rem;
+}
+.container .now .now_slide li>img{
+  width: 174px;
+  height: 174px;
+}
+.container .now .now_slide li.on>img{
+  width: 240px;
+  height: 240px;
+}
+
+
+/* liveM */
+.container .liveM{
+  width: 100%;
+  margin: 5rem 0;
+  /* display: flex;
+  justify-content: center; */
+}
+.container .liveM .liveM_contain{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container .liveM span{
+  padding-left: 1rem;
+  display: inline-block;
+  width: 240px;
+}
+.container .liveM .live_ul{
+  display: flex;
+  width: 1200px;
+  overflow-x: auto;
+}
+.container .liveM .live_ul li{
+  margin: 0 0.5rem;
+}
+.container .liveM .live_ul li>img{
+  border-radius: 10px;
+  width: 227px;
+  height: 401px;
+}
+
+/* trend */
+.container .trend{
+  width: 100%;
+  height: 692px;
+  padding: 100px 0;
+  margin: 5rem 0;
+  background-color: #f5f6f6;
+  display: flex;
+  justify-content: center;
+}
+.container .trend .trend_box{
+  width: 1200px;
+}
+.container .trend .trend_box .trend_contain{
+  display: flex;
+  justify-content: space-between;
+}
+.container .trend .trend_box .trend_slide{
+  display: flex;
+  margin: 5rem 1rem;
+}
+
+
+
+
+
+
+
+
+/* 정환===================================================================== */
 /* mid_banner2 */
 .container .mid_banner {
 	display: flex;
@@ -322,102 +634,163 @@
 }
 
 
-
-
-/* here -해인- */
-.container .here {
-  width: 100%;
-  height: 560px;
-  padding: 100px 0;
-  background-color: #f5f6f6;
-  margin-top: 130px;
-}
-.container .here .content_title {
-  width: 1200px;
-  margin: 0 auto;
-}
-.container .here .here_content{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 60px;
-  height: 440px;
-}
-.container .here .here_left{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 400px;
-
-  /* 부모너비(100%) - 1200px(현재 html에서 사용하는 태그 평균 너비) */
-  /* 1200px보다 클 경우 남는 공간을 2로나눈 값으로 padding 양쪽 분배하되 왼쪽에만 패딩값을 주겠다는 의미 */
-  /* 이는 중앙 정렬에 도움을 줌 : 특히 고정된 너비를 가진 컨테이너를 가운데 정렬하고자 자주 사용 */
-  /* calc : css의 속성값을 계산하기위해 사용 | 다양한 단위 조합(%, rem, px...)을 사용하여 계산을 수행할 수 있게 해줌. */
-  padding-left: calc((100% - 1200px) / 2);
-}
-.container .here .here_left>span{
-  display: flex;
-  justify-content: space-between;
-  width: 153px;
-  padding: 1.3rem 24px;
-  border-radius: 80px;
-  color: #fff;
-  background-color: #00000081;
-  
-}
-.container .here .here_left .on{
-  background-color: #009c7569;
-}
-.container .here .background_relative{
-  position: relative;
-  max-width: 1200px;
-  
-}
-.gradient_background {
-  position: absolute;
-  right: 0;
-  z-index: 10;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
-  width: 10%; /* 필요한 경우 조절 */
-  height: 100%; /* 필요한 경우 조절 */
-}
-.container .here .here_right_box{
-  overflow: scroll;
-  display: flex;
-  /* align-items: center; */
-  height: 440px;
-  margin-left: 200px;
-  max-width: 1200px;
-}
-.container .here .here_right{
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-around; */
-}
-.container .here .here_right>p{
-  margin: 1rem ;
-}
-.container .here .here_right>p:nth-child(2){
-  font-size: 24px;
-  font-weight: bold;
-}
-.container .here .here_right .here_table{
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  width: 458px;
-  height: 256px;
-}
-.container .here .here_right .here_table .here_table_img{
-  background-color: pink;
-  border-radius: 10px;
-  margin: 4px;
-}
-.container .here .here_right .here_table .here_table_img:first-child{
-  grid-row: 1 / 3;
+.here {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 758px;
+	background-color: #6e7170;
 }
 
+.here_wrap {
+	width: 1280px;
+	display: flex;
+	align-items: center;
+}
 
+/* 1rem => 16px  */
+.here h1 {
+	position: absolute;
+	/* 	top: -80px; */
+	padding-top: 5rem;
+	font-weight: 600;
+	font-size: 30px;
+}
+
+.here_menu {
+	/* margin-top: 53px; */
+	width: 300px;
+	height: 380px;
+}
+
+.here_sub_menu {
+	margin-bottom: 20px;
+	position: relative;
+	display: flex;
+	cursor: pointer;
+	width: 210px;
+	height: 60px;
+	align-items: center;
+	border-radius: 35px;
+	background-color: burlywood;
+	border: 1px solid rebeccapurple;
+}
+
+.here_sub_menu .here_sub_menu_span {
+	padding-left: 30px;
+	width: 115px;
+	height: 19px;
+	line-height: 19px;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.here_sub_menu .here_sub_menu_icon {
+	width: 20px;
+	height: 20px;
+	background-color: blue;
+	margin-left: 20px;
+}
+
+/* ============= */
+.here_slider {
+	top: 140px;
+}
+
+.here_menu_slider {
+	overflow: auto;
+	display: flex;
+	padding-bottom: 60px;
+}
+
+.here_sub_menu_slider {
+	flex-direction: column;
+	margin-left: 32px;
+	width: 427.99px;
+	height: 399px;
+	background-color: thistle;
+}
+
+.here_sub_menu_slider_img {
+	display: flex;
+	width: 427.99px;
+	height: 256px;
+}
+
+.here_sub_menu_slider_img1 {
+	background: url('https://img.modetour.com/eagle/photoimg/22721/rfile/638484463265535894.jpg?resize=y&resize_w=210&resize_h=256&w_h_fill=y');
+	width: 210px;
+	height: 256px;
+	border-radius: 10px;
+	margin-right: 8px;
+	background-size: 210px 256px;
+}
+
+.here_sub_menu_slider_sub_img1 {
+	width: 210px;
+	height: 124px;
+	border-radius: 10px;
+	margin-bottom: 8px;
+	background-size: 218px 128px;
+	background: url('https://img.modetour.com/eagle/photoimg/22089/rfile/635913191796277186.jpg?resize=y&resize_w=210&resize_h=124&w_h_fill=y');
+}
+
+.here_sub_menu_slider_sub_img2 {
+	width: 210px;
+	height: 124px;
+	border-radius: 10px;
+	background-size: 218px 128px;
+	background: url('https://img.modetour.com/eagle/photoimg/22089/rfile/635913192561953746.jpg?resize=y&resize_w=210&resize_h=124&w_h_fill=y');
+}
+
+.here_sub_menu_slider_img:nth-child(1) > .here_sub_menu_slider_img1 {
+	border: 10px solid black;
+}
+
+/* .here_sub_menu_slider_img3 {
+	background: url('https://img.modetour.com/eagle/photoimg/33265/rfile/635712535401766944.jpg?resize=y&resize_w=210&resize_h=256&w_h_fill=y');
+	width: 210px;
+	height: 256px;
+	border-radius: 10px;
+	margin-right: 8px;
+	background-size: 210px 256px;
+} */
+
+.here_sub_menu_slider_group {
+	padding-top: 30px;
+}
+
+.here_sub_menu_slider_text1 {
+	height: 29px;
+	font-weight: 600;
+	font-size: 24px;
+}
+
+.here_sub_menu_slider_text2 {
+	font-size: 17px;
+	height: 23px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.here_sub_menu_slider_text3 {
+	display: flex;
+	justify-content: end;
+	/* 	align-items: end; */
+	text-align: right;
+}
+
+.here_sub_menu_slider_text3_span1 {
+	font-weight: 700;
+	font-size: 26px;
+}
+
+.here_sub_menu_slider_text3_span2 {
+	font-weight: 400;
+	font-size: 22px;
+}
+
+/* =============================== 정환 END =============================== */
 
 
 
