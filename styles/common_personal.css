@@ -584,6 +584,7 @@ background-color: #009c75;
   display: flex;
   width: 600px;
   overflow: hidden;
+  cursor: grab;
 }
 .container .news_contain .news_mini_slide>li {
   margin: 0.5rem;
@@ -729,6 +730,7 @@ background-color: #009c75;
   border-radius: 10px;
   overflow: hidden;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 .container .sale_contain .sale_img {
@@ -795,6 +797,7 @@ background-color: #009c75;
 }
 .container .sale_slide>li {
   display: flex;
+  cursor: pointer;
 }
 .container .sale_slide li:first-child .sale_slide_img {
   width: 216px;
@@ -925,6 +928,7 @@ background-color: #009c75;
  margin: 0 0.5rem;
  width: 227px;
  overflow: hidden; /* 이미지 크기를 크게 사용하고 싶은데, 범위가 넘치지 않았으면함 */
+ cursor: pointer;
  
  /* overflow속성이 제대로 너비값을 가져오지 못할때가 있으므로 해당 속성으로 너비가 줄어들지 않도록 함. */
  flex-shrink: 0; 
@@ -1024,6 +1028,7 @@ background-color: #009c75;
   width: 384px;
   height: 420px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .container .trend .trend_slide li:first-child>.trend_img{
   background: url('../src/trend5.jpg')no-repeat;
@@ -1059,6 +1064,7 @@ background-color: #009c75;
 .container .trend .trend_slide .trend_cont>p:first-child{
   font-size: 22px;
   font-weight: bold;
+  cursor: pointer;
 }
 .container .trend .trend_slide .trend_cont>p:nth-child(2){
   font-size: 17px;
@@ -1093,12 +1099,14 @@ background-color: #009c75;
  width: 527px;
  height: 180px;
  border-radius: 10px;
+ cursor: pointer;
 }
 
 .container .mid_banner .dutyfree img {
  width: 527px;
  height: 180px;
  border-radius: 10px;
+ cursor: pointer;
 }
 
 
@@ -1171,6 +1179,7 @@ background-color: #009c75;
  height: 440px;
  max-width: 1200px;
  margin-left: 200px;
+ cursor: grab;
 }
 .container .here .here_right_box.on{
  display: flex;
@@ -1195,6 +1204,7 @@ height: 4px;
  margin-left: 1rem;
  display: flex;
  flex-direction: column;
+ cursor: pointer;
  /* justify-content: space-around; */
 }
 .container .here .here_right>p{
