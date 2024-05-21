@@ -18,7 +18,7 @@ function initializeFeature(){
 selectedHereMenu.forEach((span, index)=> {
   span.addEventListener('click', ()=>{
     console.log('클래스 지우고, 새로 추가하기');
-    for(i=0;i<selectedHereMenu.length;i++){
+    for(let i=0;i<selectedHereMenu.length;i++){
       selectedHereMenu[i].className = '';
       onHereBox[i].classList.remove('on');
     }
