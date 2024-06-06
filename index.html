@@ -15,15 +15,18 @@
     <div class="header_contain">
       <div class="header_top">
         <!-- 로고, 검색창,인기 검색어, membar -->
-        <div class="logo">
+        <h1 class="hidden">로고</h1>
+          <div class="logo">
           <ul class="logo_ul">
             <li><img src="./src/header_logo1.png"></li>
             <li><img src="./src/header_logo2.png"></li>
             <li><img src="./src/header_logo3.png"></li>
+            <li><img src="./src/header_logo1.png"></li>
           </ul>
         </div>
 
         <div class="search"></div>
+        <h2 class="hidden">검색창</h2>
         <form class="search_box" action="" method="get">
           <input class="search_txt" type="text" name="" placeholder="검색어를 입력해 주세요">
           <button class="search_btn" type="submit">
@@ -33,15 +36,24 @@
 
         <div class="popular_s">
           <h2>인기검색어</h2>
+          <ul class="pop_menu">
+            <li><span>1</span><p>스페인</p></li>
+            <li><span>2</span><p>홍콩/마카오</p></li>
+            <li><span>3</span><p>코타키나발루</p></li>
+            <li><span>4</span><p>시드니</p></li>
+            <li><span>5</span><p>싱가포르</p></li>
+          </ul>
           <ul class="popular_s_ul">
-            <li><span>1</span>스페인</li>
-            <li><span>2</span>홍콩/마카오</li>
-            <li><span>3</span>코타키나발루</li>
-            <li><span>4</span>시드니</li>
-            <li><span>5</span>싱가포르</li>
+            <li><span>1</span><p>스페인</p></li>
+            <li><span>2</span><p>홍콩/마카오</p></li>
+            <li><span>3</span><p>코타키나발루</p></li>
+            <li><span>4</span><p>시드니</p></li>
+            <li><span>5</span><p>싱가포르</p></li>
+            <li><span>1</span><p>스페인</p></li>
           </ul>
           <span><i class="fa-solid fa-chevron-down"></i></span>
         </div>
+        
 
         <ul class="mem_bar">
           <!--알림/웰컴쿠폰/로그인/예약내역-->
@@ -77,6 +89,9 @@
             <li>이벤트</li>
             <li>고객센터</li>
           </ul>
+          <div class="all_menu">
+            
+          </div>
         </nav>
       </div>
   </header>
@@ -89,6 +104,7 @@
       <div class="banner_line"></div>
       <div class="banner_cont"></div>
       <div class="banner_title">
+        <h3 class="hidden">배너 사진과 제목</h3>
         <p>동유럽&발칸을<br>
           <span>가장 빠르고 편안하게 여행하는 방법</span>
         </p>
@@ -107,7 +123,7 @@
 <!-- 모두의 추천상품 -->
 <div class="reco">
   <div class="reco_contain">
-    <h1 class="content_title">모두의 추천상품</h1>
+    <h3 class="content_title">모두의 추천상품</h3>
     <ul class="reco_ul">
       <li class="reco_li">
         <div class="reco_img">1</div>
@@ -150,44 +166,59 @@
     <!-- 최신 정보 -->
     <div class="news">
       <div class="news_contain">
-        <h1 class="content_title"><span>모든순간 두근두근</span>
-          모두투어에서 만나보는 최신 정보</h1>
+        <h3 class="content_title"><span>모든순간 두근두근</span><br />
+          모두투어에서 만나보는 최신 정보</h3>
         <div class="bg_box"></div>
-        <div class="news_top">
-          <div class="news_top_left">
-            <div class="news_img"></div>
-            <p>대한항공</p>
-            <div class="news_prev_btn"></div>
-            <div class="news_next_btn"></div>
-          </div>
-          <div class="news_top_right">
-            <div class="news_reco"></div>
-            <ul class="new_list">
-              <li><span>1</span>스페인<span class="look">둘러보기</span></li>
-              <li><span>2</span>홍콩/마카오<span class="look">둘러보기</span></li>
-              <li><span>3</span>코타키나발루<span class="look">둘러보기</span></li>
-              <li><span>4</span>시드니<span class="look">둘러보기</span></li>
-              <li><span>5</span>싱가포르<span class="look">둘러보기</span></li>
-              <li><span>6</span>이탈리아<span class="look">둘러보기</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="news_bottom">
-          <ul class="news_bot_right">
-            <li><img src="./src/news_i1.jpg" alt=""></li>
-            <li><img src="./src/news_i2.png" alt=""></li>
-            <li><img src="./src/news_i3.png" alt=""></li>
-            <li><img src="./src/news_i4.png" alt=""></li>
-          </ul>
-          <div class="news_bot_left">
-            <h2 class="news_notice">공지사항</h2>
-            <li>개인정보처리방침 변경 안내 < 2024.02.28>
-            </li>
-            <li>금융상품 판매대리 중개업자 증서(신한카드)</li>
-            <li>모두투어 부문별 인턴사원 채용공고</li>
-            <li>금융상품 판매대리 중개업자 증서(KB국민카드)</li>
-          </div>
+        <div class="news_box">
+          <!-- <div class="news_top"> -->
+            <div class="news_left">
+              <ul class="news_slide">
+                <li>
+                  <div class="news_img"></div>
+                  <p>서유럽 한나라 일주</p>
+                  <div class="news_prev_btn btn"><i class="fa-solid fa-angle-left"></i></div>
+                  <div class="news_next_btn btn"><i class="fa-solid fa-angle-right"></i></div>
+                </li>
+              </ul>
+              <ul class="news_mini_slide">
+                <li><img src="./src/news_i1.jpg" alt=""></li>
+                <li><img src="./src/news_i2.png" alt=""></li>
+                <li><img src="./src/news_i3.png" alt=""></li>
+                <li><img src="./src/news_i4.png" alt=""></li>
+                <li><img src="./src/news_i1.jpg" alt=""></li>
+              </ul>
+            </div>
+            <div class="news_right">
+              <div class="news_reco_box">
+                <h4>최근 본 상품이 아직 없으시네요<br />
+                  <span>이런 지역의 상품은 어떠세요?</span></h4>
+                <ul class="news_reco">
+                  <li class="on">
+                    <p><span><span class="num">1</span>스페인</span><span class="look">둘러보기</span></p>
+                    <p><span><span class="num">2</span>홍콩/마카오</span><span class="look">둘러보기</span></p>
+                    <p><span><span class="num">3</span>코타키나발루</span><span class="look">둘러보기</span></p>
+                  </li>
+                  <li>
+                    <p><span><span class="num">4</span>시드니</span><span class="look">둘러보기</span></p>
+                    <p><span><span class="num">5</span>싱가포르</span><span class="look">둘러보기</span></p>
+                    <p><span><span class="num">6</span>이탈리아</span><span class="look">둘러보기</span></p>
+                  </li>
+                </ul>
+                <div class="slide_btn">
+                  <button class="on"></button>
+                  <button></button>
+                </div>
+              </div>
+              <div class="news_notice">
+                <h2>공지사항</h2>
+                <ul class="news_notice_list">
+                  <li>개인정보처리방침 변경 안내 <2024.02.28><span>2024.02.27</span></li>
+                  <li>금융상품 판매대리 중개업자 증서(신한카드)<span>2024.01.26</span></li>
+                  <li>모두투어 부문별 인턴사원 채용공고<span>2023.11.15</span></li>
+                  <li>금융상품 판매대리 중개업자 증서(KB국민카드)<span>2023.06.13</span></li>
+                </ul>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -195,35 +226,46 @@
     <!-- 초특가 -->
     <div class="sale">
       <div class="sale_contain">
-        <h1 class="content_title">[도전!초특가] 하이난 시내특급 VS 맹글로브리조트</h1>
+        <h3 class="content_title">[도전!초특가] 하이난 시내특급 VS 맹글로브리조트</h3>
         <div class="sale_timer">
           <div class="sale_img"></div>
 
           <div class="sale_time">
-            <div class="d_day"></div>
+            <div class="d_day">
+              <i class="fa-regular fa-clock"></i>
+              <span class="time">2</span>일 
+              <span class="time">05 : 18 : 45</span> 
+              남았습니다.
+            </div>
             <p>[회원전용] 괌 힐튼 프리미어타워 오션뷰UP 4/5일</p>
             <p>#괌 #아이동반 #일반팩 #패밀리팩 #호캉스 #힐튼 #힐튼호텔</p>
-            <p>일반팩 VS 패밀리팩(성인2+아동2 전용)</p>
+            <p>특가 <span>199,000</span>원 부터</p>
           </div>
         </div>
-        <div class="sale_slide">
-          <div class="sale_slide_li">
+        <ul class="sale_slide">
+          <li class="on">
             <div class="sale_slide_img"></div>
-            <span>D-1</span>
-            <p>[회원전용] 코타키나발루 힐튼 vs 샹그릴라 라사리아 5일</p>
-            <p>특가<span>649,000</span>원 부터</p>
-          </div>
-          <div class="sale_slide_li">
+            <div class="sale_slide_cont">
+              <span>D-1</span>
+              <p>[회원전용] 코타키나발루 힐튼 vs 샹그릴라 라사리아 5일</p>
+              <p>특가<span>649,000</span>원 부터</p>
+            </div>
+          </li>
+          <li>
             <div class="sale_slide_img"></div>
+            <div class="sale_slide_cont">
             <span>D-5</span>
-            <p>신비로운 미지의 나라, 인도 완전정복!</p>
-            <p>특가<span>1,199,900</span>원 부터</p>
-          </div>
+              <p>신비로운 미지의 나라, 인도 완전정복!</p>
+              <p>특가<span>1,199,900</span>원 부터</p>
+            </div>
+          </li>
           <div class="sale_btn">
-            <div class="sale_prev_btn"><i class="fa-solid fa-angle-left"></i></div>
-            <div class="sale_next_btn"><i class="fa-solid fa-angle-right"></i></div>
+            <div class="sale_prev_btn btn"><i class="fa-solid fa-angle-left"></i></div>
+            <div class="sale_next_btn btn"><i class="fa-solid fa-angle-right"></i></div>
           </div>
-          <div class="slae_all_look">전체보기</div>
+        </ul>
+        <div class="sale_all_look">
+          <button class="all_btn">전체보기</button>
         </div>
       </div>
     </div>
@@ -233,61 +275,98 @@
     <!-- 지금 모두에서는 -->
     <div class="now">
       <div class="now_contain">
-        <h1 class="content_title">지금 모두에서는</h1>
+        <h3 class="content_title">지금 모두에서는</h3>
         <ul class="now_slide">
           <li>
             <img src="./src/now1.png" alt="">
-            <p></p>
+            <p>[이벤트] 천만원상당 숙박권 당첨기회!</p>
           </li>
           <li>
             <img src="./src/now2.png" alt="">
-            <p></p>
+            <p>[이벤트] 갤럭시S24 무료대여</p>
           </li>
           <li class="on">
             <img src="./src/now3.png" alt="">
-            <p></p>
+            <p>[웰컴3종쿠폰] 신규 회원 누구나</p>
           </li>
           <li>
             <img src="./src/now4.png" alt="">
-            <p></p>
+            <p>아시아나항공 100% 파격특가</p>
           </li>
           <li>
             <img src="./src/now5.png" alt="">
-            <p></p>
+            <p>전세계호텔 5%할인 쿠폰</p>
           </li>
         </ul>
       </div>
     </div>
 
+
+    <!-- liveM -->
     <div class="liveM">
       <div class="liveM_contain">
-        <h1 class="content_title">LIVE M</h1>
+        <h3 class="content_title">LIVE M</h3>
         <span>✈여행준비! 💰가격비교! 😆재미보장!
           모두투어의 생생한 LIVE 방송</span>
         <ul class="live_ul">
           <li>
-            <img src="./src/live6.jpg" alt="">
+            <div class="img_box">
+              <img src="./src/live6.jpg" alt="">
+            </div>
             <p>나트랑vs푸꾸욱 자유여행 대전</p>
+            <p>베트남 나트랑 vs 푸꾸옥
+              🎉인기지역 자유여행 대전
+              ✈️부산/대구/인천 출발
+              선착순100명 방송 중 10만원 할인쿠폰</p>
           </li>
           <li>
-            <img src="./src/live3.jpg" alt="">
+            <div class="img_box">
+            <img src="./src/liveM7.jpg" alt=""></div>
             <p>나트랑vs푸꾸욱 자유여행 대전</p>
+            <p>베트남 나트랑 vs 푸꾸옥
+              🎉인기지역 자유여행 대전
+              ✈️부산/대구/인천 출발
+              선착순100명 방송 중 10만원 할인쿠폰</p>
           </li>
           <li>
-            <img src="./src/live4.jpg" alt="">
+            <div class="img_box">
+            <img src="./src/live8.jpg" alt=""></div>
             <p>나트랑vs푸꾸욱 자유여행 대전</p>
+            <p>베트남 나트랑 vs 푸꾸옥
+              🎉인기지역 자유여행 대전
+              ✈️부산/대구/인천 출발
+              선착순100명 방송 중 10만원 할인쿠폰</p>
           </li>
           <li>
-            <img src="./src/live5.jpg" alt="">
+            <div class="img_box">
+            <img src="./src/live4.jpg" alt=""></div>
             <p>나트랑vs푸꾸욱 자유여행 대전</p>
+            <p>베트남 나트랑 vs 푸꾸옥
+              🎉인기지역 자유여행 대전
+              ✈️부산/대구/인천 출발
+              선착순100명 방송 중 10만원 할인쿠폰</p>
           </li>
           <li>
-            <img src="./src/live2.jpg" alt="">
+            <div class="img_box">
+            <img src="./src/live2.jpg" alt=""></div>
             <p>나트랑vs푸꾸욱 자유여행 대전</p>
+            <p>베트남 나트랑 vs 푸꾸옥
+              🎉인기지역 자유여행 대전
+              ✈️부산/대구/인천 출발
+              선착순100명 방송 중 10만원 할인쿠폰</p>
+          </li>
+          <li>
+            <div class="img_box">
+            <img src="./src/live5.jpg" alt=""></div>
+            <p>나트랑vs푸꾸욱 자유여행 대전</p>
+            <p>베트남 나트랑 vs 푸꾸옥
+              🎉인기지역 자유여행 대전
+              ✈️부산/대구/인천 출발
+              선착순100명 방송 중 10만원 할인쿠폰</p>
           </li>
         </ul>
         <div class="all_lievM">
-          방송모두보기
+          <button class="all_btn">방송모두보기</button>
         </div>
       </div>
     </div>
@@ -296,7 +375,7 @@
     <div class="trend">
       <div class="trend_box">
         <div class="trend_contain">
-          <h1 class="content_title">✨최신 여행 트렌드는?</h1>
+          <h3 class="content_title">✨최신 여행 트렌드는?</h3>
           <div class="trend_tap">
             <span class="on">무계획도OK!</span>
             <span>저렴하고 맛있는</span>
@@ -311,8 +390,8 @@
             <div class="trend_img"></div>
             <div class="trend_cont">
               <p>[무이네 올인클루시브] 호치민/판티엣 5일</p>
-              <p>#노쇼핑 #노옵션 #지프투어 #사막투어</p>
-              <p>1,069,000<span>원 ~</span></p>
+              <p>#노쇼핑 #노옵션 #지프투어</p>
+              <p><span>1,069,000</span>원 ~</p>
             </div>
           </li>
           <li>
@@ -321,7 +400,7 @@
             <div class="trend_cont">
               <p>[무이네 올인클루시브] 호치민/판티엣 5일</p>
               <p>#노쇼핑 #노옵션 #지프투어 #사막투어</p>
-              <p>1,069,000<span>원 ~</span></p>
+              <p><span>1,069,000</span>원 ~</p>
             </div>
           </li>
           <li>
@@ -330,7 +409,7 @@
             <div class="trend_cont">
               <p>[무이네 올인클루시브] 호치민/판티엣 5일</p>
               <p>#노쇼핑 #노옵션 #지프투어 #사막투어</p>
-              <p>1,069,000<span>원 ~</span></p>
+              <p><span>1,069,000</span>원 ~</p>
             </div>
           </li>
           <li>
@@ -339,7 +418,7 @@
             <div class="trend_cont">
               <p>[무이네 올인클루시브] 호치민/판티엣 5일</p>
               <p>#노쇼핑 #노옵션 #지프투어 #사막투어</p>
-              <p>1,069,000<span>원 ~</span></p>
+              <p><span>1,069,000</span>원 ~</p>
             </div>
           </li>
         </ul>
@@ -351,7 +430,7 @@
 
 
 
-<!-- 정환 --------------------------------------------------------------------->
+    <!-- 정환 --------------------------------------------------------------------->
     <div class="mid_banner">
       <div class="wifi">
         <img src="/src/mid_banner2.png" alt="와이파이 도시락">
@@ -360,167 +439,186 @@
         <img src="/src/mid_banner1.png" alt="면세점 혜택 모음">
       </div>
     </div>
+    <!-- 정환 end ----------------------------------------------------------------->
+
+
+
+
 
     <!-- 요즘 여행가는 사람들은 '여기' 가요 -->
     <div class="here">
-      <h1>요즘 여행가는 사람들은 '여기' 가요.</h1>
-      <div class="here_wrap">
-        <div class="here_menu">
-          <ul>
-            <li class="here_sub_menu">
-              <span class="here_sub_menu_span">미취학아이와 함께</span>
-              <span class="here_sub_menu_icon"></span>
+      <h3 class="content_title">요즘 여행가는 사람들은 '여기' 가요.</h3>
+      <div class="here_content">
+        <div class="here_left">
+          <span class="selected">미취학아이와 함께 <i class="fa-solid fa-arrow-right-long"></i></span>
+          <span>사춘기아이와 함께 <i class="fa-solid fa-arrow-right-long"></i></span>
+          <span>부모님과 함께 <i class="fa-solid fa-arrow-right-long"></i></span>
+          <span>계모임친구와 함께 <i class="fa-solid fa-arrow-right-long"></i></span>
+          <span>2030친구와 함께 <i class="fa-solid fa-arrow-right-long"></i></span>
+        </div>
+        <div class="background_relative">
+          <div class="gradient_background"></div>
+          <!--- 여기서부터 복제해서 on off 주면 될 듯 -->
+          <!-- 미취학아이와 함께 -->
+          <ul class="here_right_box on">
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[나트랑] 올인클루시브 5일[셀렉텀노아]</p>
+              <p>#키즈전용 #워터파크 #음료/주류 무제한 #성인2아동2전용</p>
             </li>
-            <li class="here_sub_menu">
-              <span class="here_sub_menu_span">사춘기아이와 함께</span>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[괌] PIC 리조트 4/5일</p>
+              <p>#올인클루시브 #골드카드 #실버카드 #슈퍼아메리칸서커스</p>
             </li>
-            <li class="here_sub_menu">
-              <span class="here_sub_menu_span">부모님과 함께</span>
-            </li>
-            <li class="here_sub_menu">
-              <span class="here_sub_menu_span">계모임친구와 함께</span>
-            </li>
-            <li class="here_sub_menu">
-              <span class="here_sub_menu_span">2030친구와 함께</span>
-            </li>
-          </ul>
-        </div><!-- here_menu -->
-        <div class="here_slider">
-          <ul class="here_menu_slider">
-            <li class="here_sub_menu_slider">
-              <div class="here_sub_menu_slider_img">
-                <div class="here_sub_menu_slider_img1">
-                </div>
-                <div class="here_sub_menu_slider_img2">
-                  <div class="here_sub_menu_slider_sub_img1"></div>
-                  <div class="here_sub_menu_slider_sub_img2"></div>
-                </div><!-- here_sub_menu_slider_img2 -->
-              </div><!-- here_sub_menu_slider_img -->
-              <div class="here_sub_menu_slider_group">
-                <div class="here_sub_menu_slider_text1">[나트랑] 올인클루시브 5일[셀렉텀노아]</div>
-                <div class="here_sub_menu_slider_text2">#키즈전용 #워터파크 #음료/주류 무제한 #성인2아동2전용</div>
-                <div class="here_sub_menu_slider_text3">
-                  <span class="here_sub_menu_slider_text3_span1">669,900</span>
-                  <span class="here_sub_menu_slider_text3_span2">원~</span>
-                </div><!-- here_sub_menu_slider_text3 -->
-              </div><!-- here_sub_menu_slider_group -->
-            </li><!-- here_sub_menu_slider -->
-            <li class="here_sub_menu_slider">
-              <div class="here_sub_menu_slider_img">
-                <div class="here_sub_menu_slider_img1"></div>
-                <div class="here_sub_menu_slider_img2">
-                  <div class="here_sub_menu_slider_sub_img1"></div>
-                  <div class="here_sub_menu_slider_sub_img2"></div>
-                </div><!-- here_sub_menu_slider_img2 -->
-              </div><!-- here_sub_menu_slider_img -->
-              <div class="here_sub_menu_slider_group">
-                <div class="here_sub_menu_slider_text1">[괌] PIC 리조트 4/5일</div>
-                <div class="here_sub_menu_slider_text2">#올인클루시브 #골든카드 #실버카드 #슈퍼아메리칸서커스</div>
-                <div class="here_sub_menu_slider_text3">
-                  <span class="here_sub_menu_slider_text3_span1">999,000</span>
-                  <span class="here_sub_menu_slider_text3_span2">원~</span>
-                </div><!-- here_sub_menu_slider_text3 -->
-              </div><!-- here_sub_menu_slider_group -->
-            </li>
-            <li class="here_sub_menu_slider">
-              <div class="here_sub_menu_slider_img">
-                <div class="here_sub_menu_slider_img1"></div>
-                <div class="here_sub_menu_slider_img2">
-                  <div class="here_sub_menu_slider_sub_img1"></div>
-                  <div class="here_sub_menu_slider_sub_img2"></div>
-                </div><!-- here_sub_menu_slider_img2 -->
-              </div><!-- here_sub_menu_slider_img -->
-              <div class="here_sub_menu_slider_group">
-                <div class="here_sub_menu_slider_text1">[사이판] PIC 리조트 4/5일</div>
-                <div class="here_sub_menu_slider_text2">가족여행이라면 PIC/사이판 NO.1 워터파크/무제한슬라이드</div>
-                <div class="here_sub_menu_slider_text3">
-                  <span class="here_sub_menu_slider_text3_span1">749,000</span>
-                  <span class="here_sub_menu_slider_text3_span2">원~</span>
-                </div><!-- here_sub_menu_slider_text3 -->
-              </div><!-- here_sub_menu_slider_group -->
-            </li>
-            <li class="here_sub_menu_slider">
-              <div class="here_sub_menu_slider_img">
-                <div class="here_sub_menu_slider_img1"></div>
-                <div class="here_sub_menu_slider_img2">
-                  <div class="here_sub_menu_slider_sub_img1"></div>
-                  <div class="here_sub_menu_slider_sub_img2"></div>
-                </div><!-- here_sub_menu_slider_img2 -->
-              </div><!-- here_sub_menu_slider_img -->
-              <div class="here_sub_menu_slider_group">
-                <div class="here_sub_menu_slider_text1">[나트랑] 올인클루시브 5일[셀렉텀노아]</div>
-                <div class="here_sub_menu_slider_text2">#키즈전용 #워터파크 #음료/주류 무제한 #성인2아동2전용</div>
-                <div class="here_sub_menu_slider_text3">
-                  <span class="here_sub_menu_slider_text3_span1">669,900</span>
-                  <span class="here_sub_menu_slider_text3_span2">원~</span>
-                </div><!-- here_sub_menu_slider_text3 -->
-              </div><!-- here_sub_menu_slider_group -->
-            </li>
-            <li class="here_sub_menu_slider">
-              <div class="here_sub_menu_slider_img">
-                <div class="here_sub_menu_slider_img1"></div>
-                <div class="here_sub_menu_slider_img2">
-                  <div class="here_sub_menu_slider_sub_img1"></div>
-                  <div class="here_sub_menu_slider_sub_img2"></div>
-                </div><!-- here_sub_menu_slider_img2 -->
-              </div><!-- here_sub_menu_slider_img -->
-              <div class="here_sub_menu_slider_group">
-                <div class="here_sub_menu_slider_text1">[세부] 제이파크 아일랜드 패키지 4~6일</div>
-                <div class="here_sub_menu_slider_text2">#인기No.1 #객실업그레이드 #가족여행추천</div>
-                <div class="here_sub_menu_slider_text3">
-                  <span class="here_sub_menu_slider_text3_span1">612,800</span>
-                  <span class="here_sub_menu_slider_text3_span2">원~</span>
-                </div><!-- here_sub_menu_slider_text3 -->
-              </div><!-- here_sub_menu_slider_group -->
-            </li>
-            <li class="here_sub_menu_slider">
-              <div class="here_sub_menu_slider_img">
-                <div class="here_sub_menu_slider_img1"></div>
-                <div class="here_sub_menu_slider_img2">
-                  <div class="here_sub_menu_slider_sub_img1"></div>
-                  <div class="here_sub_menu_slider_sub_img2"></div>
-                </div><!-- here_sub_menu_slider_img2 -->
-              </div><!-- here_sub_menu_slider_img -->
-              <div class="here_sub_menu_slider_group">
-                <div class="here_sub_menu_slider_text1">[오키나와] 특가 3/4/5일</div>
-                <div class="here_sub_menu_slider_text2">#반짝특가 #이벤트 #선착순</div>
-                <div class="here_sub_menu_slider_text3">
-                  <span class="here_sub_menu_slider_text3_span1">599,900</span>
-                  <span class="here_sub_menu_slider_text3_span2">원~</span>
-                </div><!-- here_sub_menu_slider_text3 -->
-              </div><!-- here_sub_menu_slider_group -->
-            </li>
-            <li class="here_sub_menu_slider">
-              <div class="here_sub_menu_slider_img">
-                <div class="here_sub_menu_slider_img1"></div>
-                <div class="here_sub_menu_slider_img2">
-                  <div class="here_sub_menu_slider_sub_img1"></div>
-                  <div class="here_sub_menu_slider_sub_img2"></div>
-                </div><!-- here_sub_menu_slider_img2 -->
-              </div><!-- here_sub_menu_slider_img -->
-              <div class="here_sub_menu_slider_group">
-                <div class="here_sub_menu_slider_text1">[푸꾸옥] 빈펄디스커버리 5일</div>
-                <div class="here_sub_menu_slider_text2">#원더월드 #2베드룸풀빌라 #노쇼핑 #자유일정</div>
-                <div class="here_sub_menu_slider_text3">
-                  <span class="here_sub_menu_slider_text3_span1">705,000</span>
-                  <span class="here_sub_menu_slider_text3_span2">원~</span>
-                </div><!-- here_sub_menu_slider_text3 -->
-              </div><!-- here_sub_menu_slider_group -->
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[사이판] PIC 패키지 4-5일</p>
+              <p>#가족여행이라면 PIC/사이판 NO.1 워터파크/무제한슬라이드</p>
             </li>
           </ul>
-        </div><!-- here_slider -->
-      </div><!-- here_wrap -->
-    </div>here
-
-<!------------------------------------ 정환END ----------------------------------->
-
+          <!-- 사춘기아이와 함께 -->
+          <ul class="here_right_box">
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[미서부] 완전일주 9일</p>
+              <p>#4대캐년 #3대도시 #요세미티 #샌프란2연박</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[도쿄] 패키지 3일 (1일자유)</p>
+              <p>#도쿄여행 #요코하마 #1일자유</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[싱가포르] 1일자유/노쇼핑 5/6일</p>
+              <p>#베스트셀러 #월드체인호텔 #마리나베이샌즈 #센토사호텔</p>
+            </li>
+          </ul>
+          <!-- 부모님과 함께 -->
+          <ul class="here_right_box">
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[마카오] 세계문화유산탐방 3/5일</p>
+              <p>#마카오핵심투어 #4성급호텔 #에그타르트제공</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[고품격 시그니처] [큐슈] 2박 3일 패키지</p>
+              <p>#특급온천호텔 #노천탕 #가이세키 #호화뷔페식 #구마모토성</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[동유럽/발칸] 자그레브직항 5국9일</p>
+              <p>#인솔자동행 #쉔부른궁전 #플리트비체 #야간투어 #4성2박UP</p>
+            </li>
+          </ul>
+          <!-- 계모임친구와 함께 -->
+          <ul class="here_right_box">
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[강릉출발] 울릉도 완전일주 2박3일</p>
+              <p>#후포항 #울릉도 #죽도 #독도 #관음도 #육로버스관광</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[알펜루트] 온천 4일/5일</p>
+              <p>#즉시할인5만원 #10만원할인쿠폰 #설벽OPEN</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[청도] 칭다오 핵심3일</p>
+              <p>#힐튼2박 #노쇼핑 #양꼬치 #칭다오맥주</p>
+            </li>
+          </ul>
+          <!-- 2030친구와 함께 -->
+          <ul class="here_right_box">
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[호치민/무이네/판티엘] 5일</p>
+              <p>#반나절자유일정 #호치민시내관광 #사막투어 #와인캐슬</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[몽골/테를지] 푸르공 3/4/5일</p>
+              <p>#캐시미어목도리 #낙타양말증정 #신게르 #4성호텔</p>
+            </li>
+            <li class="here_right">
+              <div class="here_table">
+                <div class="here_table_img">1</div>
+                <div class="here_table_img">2</div>
+                <div class="here_table_img">3</div>
+              </div>
+              <p>[북인도] 바라나시 9일</p>
+              <p>#노쇼핑 #노옵션 #준특급호텔 #모두단독</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
 
 
     <!-- 홈쇼핑 판매 best5 -->
     <div class="best5">
-      <h1 class="content_title">홈쇼핑 판매 BEST5</h1>
+      <h3 class="content_title">홈쇼핑 판매 BEST5</h3>
       <div class="best_container">
         <div class="best_table">
           <div class="best_th">
@@ -599,7 +697,7 @@
 
     <!-- 이런 여행 어때요? -->
     <div class="reco2">
-      <h1 class="content_title">이런 여행 어때요?</h1>
+      <h3 class="content_title">이런 여행 어때요?</h3>
       <ul class="card_li">
         <li class="card">
           <div class="card_img"><img src="./src/reco2_6.jpg" alt=""></div>
@@ -906,7 +1004,7 @@
   <span class="scroll_up" id="scroll_up"></span>
 
   <!-- script -->
-  <script src="./script/common.js"></script>
+  <script src="./script/main.js"></script>
 </body>
 
 </html>

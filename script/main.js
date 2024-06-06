@@ -1,4 +1,76 @@
+// logo slide =================================================================================
+const logo = document.querySelector('.logo_ul');
+const logoList = document.querySelectorAll('.logo_ul li');
+const logoWidth = 220;
+let logoCnt = 0;
+let currentLogo = 0;
 
+const logoSlide = () => {
+  logo.classList.add('animated');
+  currentLogo = logoWidth * logoCnt; // 0 > 220 > 440 ...
+  logo.style.left = -(currentLogo) + 'px';      
+  // console.log(`${currentLogo} = ${logoWidth} * ${logoCnt}`);
+  logoCnt++;
+  
+  if(logoCnt == logoList.length+1){
+    logoCnt = 0;
+    logo.classList.remove('animated');
+    logo.style.left = logoCnt + 'px';
+  }
+}
+setInterval(logoSlide, 5000);
+
+// popular slide ==============================================================================
+const popDiv = document.querySelector('.popular_s');
+const popUl = document.querySelector('.popular_s_ul');
+const popLi = document.querySelectorAll('.popular_s_ul li');
+const popHeight = 30.5; // 각 리스트의 높이
+const popUlTop = popUl.getBoundingClientRect().top; //getBoundingClientRect() : 절대 위치를 구할 수 있다. | 해당 함수로 부모 기준의 상대적 위치를 구할 수 있다.
+let perPopTop = 0; // 각 리스트의 높이를 저장
+let currentPop = 0; // 현재 높이값
+let popCnt = 0; // 리스트의 갯수와 같아지면 초기화
+let calcPop = 0; // 계산된 높이값
+
+const popPosi = () => {
+  for(let i=0;i<popLi.length;i++){
+    calcPop = popHeight * i;
+    popLi[i].style.top = calcPop + 'px';
+  }
+};
+popPosi(); // 초기 값을 잡아주지 않으면 list가 전부 position 0으로 잡히기 때문에, 초기값을 잡아주는 함수를 만들어준다.
+
+const popSlide = () => { // 각 리스트의 높이 값 구하기
+  if(popCnt == popLi.length){ // 초기화 하고 재정비
+    popCnt = 0;
+    for(let i=0;i<popLi.length;i++){
+      popLi[i].style.transition = '';
+      popLi[i].style.top = popHeight * i + 'px';
+    }
+  }
+  for(let i=0;i<popLi.length;i++){
+    popLi[i].style.transition = '0.5s ease';
+    perPopTop = popLi[i].getBoundingClientRect().top;
+    // 계산된 높이 값 = 각 리스트의 top값 - 부모의 top값 - 리스트의 높이값
+    // 각 리스트의 top 절대 값 - 부모의 top 절대 값 : 각 리스트의 부모로부터의 상대적 위치값
+    // - 리스트의 높이 값 : top을 리스트의 높이값 만큼 올려주기 위해 음수 처리
+    calcPop = (perPopTop - popUlTop) - (popHeight) + 'px';
+    popLi[i].style.top = calcPop;
+  }
+  popCnt++;
+};
+setInterval(popSlide, 3000);
+
+const popHover = () => {
+  popDiv.addEventListener('mouseenter', ()=>{
+    document.querySelector('.popular_s h2').style.color = '#009C75';
+    document.querySelector('.pop_menu').classList.add('on');
+  });
+  popDiv.addEventListener('mouseleave', ()=>{
+    document.querySelector('.popular_s h2').style.color = '#8a8f8e';
+    document.querySelector('.pop_menu').classList.remove('on');
+  });
+};
+popHover();
 
 // HERE =====================================================================================================================
 // here selected ===================
