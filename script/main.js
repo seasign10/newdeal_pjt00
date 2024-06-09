@@ -40,7 +40,7 @@ const popPosi = () => {
 popPosi(); // 초기 값을 잡아주지 않으면 list가 전부 position 0으로 잡히기 때문에, 초기값을 잡아주는 함수를 만들어준다.
 
 const popSlide = () => { // 각 리스트의 높이 값 구하기
-  if(popCnt == popLi.length){ // 초기화 하고 재정비
+  if(popCnt == popLi.length-1){ // 초기화 하고 재정비
     popCnt = 0;
     for(let i=0;i<popLi.length;i++){
       popLi[i].style.transition = '';
@@ -53,7 +53,7 @@ const popSlide = () => { // 각 리스트의 높이 값 구하기
     // 계산된 높이 값 = 각 리스트의 top값 - 부모의 top값 - 리스트의 높이값
     // 각 리스트의 top 절대 값 - 부모의 top 절대 값 : 각 리스트의 부모로부터의 상대적 위치값
     // - 리스트의 높이 값 : top을 리스트의 높이값 만큼 올려주기 위해 음수 처리
-    calcPop = (perPopTop - popUlTop) - (popHeight) + 'px';
+    calcPop = (Math.abs(perPopTop) - popUlTop) - (popHeight) + 'px';
     popLi[i].style.top = calcPop;
   }
   popCnt++;
