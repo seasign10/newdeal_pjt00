@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 52 52">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_347479" data-name="사각형 347479" width="37.673" height="33.127" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_347478" data-name="사각형 347478" width="37.673" height="33.126" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="사각형_347476" data-name="사각형 347476" width="36.544" height="2.323" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="icon_category_02_52" transform="translate(-147.945 -556.945)">
+    <rect id="사각형_1002" data-name="사각형 1002" width="52" height="52" transform="translate(147.945 556.945)" fill="none" opacity="0.21"/>
+    <g id="그룹_475331" data-name="그룹 475331" transform="translate(155.109 566.383)">
+      <g id="그룹_475330" data-name="그룹 475330" transform="translate(0 -0.001)" clip-path="url(#clip-path)">
+        <g id="그룹_475329" data-name="그룹 475329" transform="translate(0 0.001)">
+          <g id="그룹_475328" data-name="그룹 475328" clip-path="url(#clip-path-2)">
+            <path id="패스_16314" data-name="패스 16314" d="M11.552,5.542V2.823A2.33,2.33,0,0,1,13.875.5h6.947a2.33,2.33,0,0,1,2.322,2.323V5.542H20.821V2.822H13.875v2.72Z" transform="translate(1.489 0.064)" fill="#7d7d7d"/>
+            <path id="패스_16315" data-name="패스 16315" d="M11.552,5.542V2.823A2.33,2.33,0,0,1,13.875.5h6.947a2.33,2.33,0,0,1,2.322,2.323V5.542H20.821V2.822H13.875v2.72Z" transform="translate(1.489 0.064)" fill="none" stroke="#111" stroke-linejoin="round" stroke-width="1"/>
+            <path id="사각형_347467" data-name="사각형 347467" d="M2.058,0H34.487a2.057,2.057,0,0,1,2.057,2.057V22.716a2.058,2.058,0,0,1-2.058,2.058H2.058A2.058,2.058,0,0,1,0,22.716V2.058A2.058,2.058,0,0,1,2.058,0Z" transform="translate(0.564 5.606)" fill="#e3997b"/>
+            <rect id="사각형_347468" data-name="사각형 347468" width="4.506" height="2.181" transform="translate(5.712 30.381)" fill="#7d7d7d"/>
+            <rect id="사각형_347469" data-name="사각형 347469" width="4.506" height="2.181" transform="translate(5.712 30.381)" fill="none" stroke="#111" stroke-linejoin="round" stroke-width="1"/>
+            <rect id="사각형_347470" data-name="사각형 347470" width="4.506" height="2.181" transform="translate(27.455 30.381)" fill="#7d7d7d"/>
+            <rect id="사각형_347471" data-name="사각형 347471" width="4.506" height="2.181" transform="translate(27.455 30.381)" fill="none" stroke="#111" stroke-linejoin="round" stroke-width="1"/>
+            <rect id="사각형_347472" data-name="사각형 347472" width="2.822" height="24.774" transform="translate(10.218 5.607)" fill="#fdd780"/>
+            <rect id="사각형_347473" data-name="사각형 347473" width="2.822" height="24.774" transform="translate(10.218 5.607)" fill="none" stroke="#111" stroke-width="1"/>
+            <rect id="사각형_347474" data-name="사각형 347474" width="2.822" height="24.774" transform="translate(24.633 5.607)" fill="#fdd780"/>
+            <rect id="사각형_347475" data-name="사각형 347475" width="2.822" height="24.774" transform="translate(24.633 5.607)" fill="none" stroke="#111" stroke-width="1"/>
+            <path id="패스_16316" data-name="패스 16316" d="M6.477,5.673a5.2,5.2,0,0,0-.071-.706H2.823A2.33,2.33,0,0,0,.5,7.29v3.665a5.31,5.31,0,0,0,.631.063A5.346,5.346,0,0,0,6.477,5.673" transform="translate(0.064 0.639)" fill="#fdd780"/>
+            <path id="패스_16317" data-name="패스 16317" d="M6.477,5.673a5.2,5.2,0,0,0-.071-.706H2.823A2.33,2.33,0,0,0,.5,7.29v3.665a5.31,5.31,0,0,0,.631.063A5.346,5.346,0,0,0,6.477,5.673Z" transform="translate(0.064 0.639)" fill="none" stroke="#111" stroke-width="1"/>
+            <path id="패스_16318" data-name="패스 16318" d="M32.858,10.977a5.2,5.2,0,0,0,.706-.071V7.323A2.33,2.33,0,0,0,31.241,5H27.575a5.308,5.308,0,0,0-.063.631,5.346,5.346,0,0,0,5.346,5.346" transform="translate(3.545 0.644)" fill="#fdd780"/>
+            <path id="패스_16319" data-name="패스 16319" d="M32.858,10.977a5.2,5.2,0,0,0,.706-.071V7.323A2.33,2.33,0,0,0,31.241,5H27.575a5.308,5.308,0,0,0-.063.631A5.346,5.346,0,0,0,32.858,10.977Z" transform="translate(3.545 0.644)" fill="none" stroke="#111" stroke-width="1"/>
+            <path id="패스_16320" data-name="패스 16320" d="M27.578,26.9a5.2,5.2,0,0,0,.071.706h3.583a2.33,2.33,0,0,0,2.323-2.323V21.618a5.084,5.084,0,0,0-.631-.064A5.346,5.346,0,0,0,27.578,26.9" transform="translate(3.553 2.776)" fill="#fdd780"/>
+            <path id="패스_16321" data-name="패스 16321" d="M27.578,26.9a5.2,5.2,0,0,0,.071.706h3.583a2.33,2.33,0,0,0,2.323-2.323V21.618a5.084,5.084,0,0,0-.631-.064A5.346,5.346,0,0,0,27.578,26.9Z" transform="translate(3.553 2.776)" fill="none" stroke="#111" stroke-width="1"/>
+            <path id="패스_16322" data-name="패스 16322" d="M1.206,21.62a5.2,5.2,0,0,0-.706.071v3.583A2.33,2.33,0,0,0,2.823,27.6H6.487a5.084,5.084,0,0,0,.064-.631A5.346,5.346,0,0,0,1.206,21.62" transform="translate(0.064 2.785)" fill="#fdd780"/>
+            <path id="패스_16323" data-name="패스 16323" d="M1.206,21.62a5.2,5.2,0,0,0-.706.071v3.583A2.33,2.33,0,0,0,2.823,27.6H6.487a5.084,5.084,0,0,0,.064-.631A5.346,5.346,0,0,0,1.206,21.62Z" transform="translate(0.064 2.785)" fill="none" stroke="#111" stroke-width="1"/>
+            <g id="그룹_475327" data-name="그룹 475327" transform="translate(0.564 28.058)" opacity="0.25" style="mix-blend-mode: multiply;isolation: isolate">
+              <g id="그룹_475326" data-name="그룹 475326">
+                <g id="그룹_475325" data-name="그룹 475325" clip-path="url(#clip-path-3)">
+                  <path id="패스_16324" data-name="패스 16324" d="M2.823,27.18h31.9a2.33,2.33,0,0,0,2.323-2.323H.5A2.33,2.33,0,0,0,2.823,27.18" transform="translate(-0.5 -24.857)" fill="#e3997b"/>
+                </g>
+              </g>
+            </g>
+            <path id="사각형_347477" data-name="사각형 347477" d="M2.058,0H34.487a2.057,2.057,0,0,1,2.057,2.057V22.716a2.058,2.058,0,0,1-2.058,2.058H2.058A2.058,2.058,0,0,1,0,22.716V2.058A2.058,2.058,0,0,1,2.058,0Z" transform="translate(0.564 5.606)" fill="none" stroke="#111" stroke-width="1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

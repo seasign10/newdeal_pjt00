@@ -392,14 +392,39 @@ nav .nav_menu {
 nav .all_menu{
   /* position: relative; */
 }
+.all_menu_hover.on{}
 .all_menu_hover{
   position: absolute;
-  top: 2.5rem;
+  top: 2.4rem;
   max-width: 1300px;
   min-width: 1200px;
-  height: 500px;
-  background-color: blue;
+  height: 620px;
+  padding: 39px 0 60px 0;
+
+  /* 수평그림자, 수직그림자, spread, 그림자 크기, 색상 */
+  box-shadow: 0 32px 32px -30px rgba(0,0,0,0.4);
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
   z-index: 10;
+}
+.menu_list1, .menu_list2{
+  color: rgba(0, 0, 0, 0.7);
+  /* font-size: 12px; */
+}
+.menu_list3{
+  color: black;
+}
+.menu_list3 li{
+  display: flex;
+}
+.menu_list3 dl{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-color: pink;
+}
+.menu_list3 dl dt{ /*  */
+  grid-column: 1 / span 2;
 }
 
 /* 중단 */
@@ -481,7 +506,7 @@ background-color: #009c75;
  /* reco1 */
 .container .reco {
  width: 100%;
- margin: 8rem 0;
+ margin: 13rem 0;
 }
 .container .reco_contain {
  width: 1200px;
