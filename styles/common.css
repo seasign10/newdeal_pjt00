@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {font-size: 1.2rem;}
 
 /*  */
 .animated{
-  transition: 2s ease;
+  transition: 1s ease;
 }
 
 /* 슬라이드 : flex */
@@ -355,10 +355,11 @@ input.search_txt:focus {
 }
 
 
-
+nav{
+  position: relative;
+}
 nav .nav_menu {
   display: flex;
-  position: relative;
  }
  nav .nav_menu>li>i {
    margin-right: 1rem;
@@ -383,56 +384,119 @@ nav .nav_menu {
    color: #009C75;
    transition: color 0.3s ease;
  }
-#header nav ul li {
+#header nav .nav_li {
   padding-right: 1rem;
   font-size: 16px;
   align-items: center;
   cursor: pointer;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
-nav .all_menu{
-  /* position: relative; */
-}
-.all_menu_hover.on{}
-.all_menu_hover{
+.all_menu_hover.on{
+  display: block;
+  transform: translate(-50%, 0%);
   position: absolute;
-  top: 2.4rem;
+  top: 100%;
+  left: 50%;
   max-width: 1300px;
   min-width: 1200px;
+  width: 100vw;
   height: 620px;
   padding: 39px 0 60px 0;
-
+  
   /* 수평그림자, 수직그림자, spread, 그림자 크기, 색상 */
-  box-shadow: 0 32px 32px -30px rgba(0,0,0,0.4);
+  box-shadow: 0 32px 40px -25px rgba(0,0,0,0.4);
   background-color: #fff;
   border-radius: 0 0 10px 10px;
   z-index: 10;
 }
-.menu_list1, .menu_list2{
-  color: rgba(0, 0, 0, 0.7);
-  /* font-size: 12px; */
+.all_menu_hover{
+  display: none;
 }
-.menu_list3{
+
+.menu_list1, .menu_list2, .menu_list3{
   color: black;
+  margin: 0 auto;
+  width: 1200px;
+}
+.menu_list1{
+  display: flex;
+  height: 86px;
+  text-align: center;
+  margin: 0 auto 50px auto;
+}
+.menu_list1 li{
+  cursor: pointer;
+  margin-right: 30px;
+}
+.menu_list1 .img_box{
+  width: 62px;
+  height: 62px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f5f6f6;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.menu_list2{
+  display: flex;
+  height: 45px;
+  margin: 0 auto 50px auto;
+}
+.menu_list2 li{
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 45px;
+  font-size: 14px;
+}
+.menu_list2 img{
+  width: 60px;
+  height: 60px;
+}
+.menu_list2 div{
+  height: 45px;
+  padding: 0.2rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu_list3{
+  margin: 0 atuo;
 }
 .menu_list3 li{
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 .menu_list3 dl{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  background-color: pink;
+  width: 260px;
+  margin-top: 1rem;
 }
-.menu_list3 dl dt{ /*  */
+.menu_list3 dl dt{ /* grid의 첫 칸은 혼자 차지하도록 */
   grid-column: 1 / span 2;
+  font-size: 16px;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.menu_list3 dl dd{
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* 중단 */
 /* banner_btn */
-.container .banner .prev_btn:hover{
+.container .prev_btn:hover{
  background-color: #009c75;
 }
-.container .banner .prev_btn{
+.container .prev_btn{
  position: absolute;
  left: 0;
  bottom: -5rem;
@@ -446,10 +510,10 @@ nav .all_menu{
  font-size: 20px;
  cursor: pointer;
 }
-.container .banner .next_btn:hover{
+.container .next_btn:hover{
 background-color: #009c75;
 }
-.container .banner .next_btn{
+.container .next_btn{
  position: absolute;
  left: 3rem;
  bottom: -5rem;
@@ -464,15 +528,28 @@ background-color: #009c75;
  cursor: pointer;
 }
 .container .banner_btn {
- position: relative;
- margin-left: 10%;
- margin-top: 12rem;
+  position: relative;
+  width: 1200px;
+  margin: 0 auto 0 auto;
+  top: 0;
+}
+.container .banner_btn .page_num{
+  position: absolute;
+  left: 8rem;
+  bottom: -4.5rem;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /* bannenr */
+.container .banner{
+  width: 100%;
+  overflow: hidden;
+}
 .container .banner .banner_title{
   position: absolute;
-  left: 15%;
+  /* 50% > 600px 될 때 차이 값만큼 이동 */
+  left: calc(50% - 600px); 
   top: 30%;
   color: white;
   font-weight: 900;
@@ -481,27 +558,68 @@ background-color: #009c75;
  .container .banner .banner_title>p>span{
    color: rgb(243, 243, 143);
  }
-.container .banner{
+.container .banner .banner_slide{
+  overflow: hidden;
+  display: flex;
+  
+  /* 3개의 이미지가 나열되어 있으므로 300%로 설정 */
+  width: 500%;
+}
+.container .banner .banner_slide li{
   width: 100%;
   height: 624px;
   position: relative;
- }
+}
  .container .banner_line{
-   background-color: #be4a4a;
+   position: absolute;
+   left: 0;
    width: 100%;
    z-index: -1;
-   height: 70%;
- }
- .container .banner_cont{
-   background: url('../src/banner5.jpg')no-repeat;
-   background-size: cover;
-   position: absolute;
-   top: 0;
-   right: 0%;
-   height: 100%;
-   max-width: 100%;
-   min-width: 80%;
- }
+   height: 60vw;
+   max-height: 400px;
+   
+  }
+  .container .banner>.banner_slide>li:first-child .banner_line{
+    background-color: #85ae4c;
+  }
+  .container .banner>.banner_slide>li:nth-child(2) .banner_line{
+    background-color: #be4a4a;
+  }
+  .container .banner>.banner_slide>li:nth-child(3) .banner_line{
+    background-color: #5270c3;
+  }
+  .container .banner>.banner_slide>li:nth-child(4) .banner_line{
+    background-color: #85ae4c;
+  }
+  .container .banner>.banner_slide>li:last-child .banner_line{
+    background-color: #be4a4a;
+  }
+  .container .banner_cont{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70vw;
+    max-height: 680px;
+    min-width: 93vw;
+    max-width: 1340px;
+  }
+  .container .banner>.banner_slide>li:first-child .banner_cont {
+    background: url('../src/banner7.jpg')no-repeat;
+    background-size: cover;
+  background-color: red;
+  }
+  .container .banner>.banner_slide>li:nth-child(2) .banner_cont {
+    background: url('../src/banner5.jpg')no-repeat;
+  }
+  .container .banner>.banner_slide>li:nth-child(3) .banner_cont {
+    background: url('../src/banner6.jpg')no-repeat;
+  }
+  .container .banner>.banner_slide>li:nth-child(4) .banner_cont {
+    background: url('../src/banner7.jpg')no-repeat;
+  }
+  .container .banner>.banner_slide>li:last-child .banner_cont {
+  background: url('../src/banner5.jpg')no-repeat;
+  }
 
  /* reco1 */
 .container .reco {

@@ -1,3 +1,64 @@
+
+// banner slide =================================================================================
+let currentSlideIdx = 0;
+// n00% 크기의 ul을 가지고 통째로 100%씩 이동하여 보여줄 것이기 때문에, ul을 기준으로 이동시킨다.
+const bannerSlides = document.querySelector('.banner_slide');
+const bannerSlide = document.querySelectorAll('.banner_slide li');
+const totalSlides = bannerSlide.length;
+const bannerCnt = document.querySelectorAll('.page_num span');
+let bannerCount = bannerSlide.length;
+let isBannerAnimating = false;
+
+// console.log(bannerSlides);
+console.log(bannerSlides.style);
+console.log(bannerSlides.style.width);
+// document.bannerSlides.style.width = `${bannerCount * 100}%`;
+
+// 애니메이션이 시작과 같이 끝나는 것을 감지하는 이벤트
+function isTransition() {
+  isBannerAnimating = true;
+  setTimeout(()=>{
+    isBannerAnimating = false;
+  }, 2000);
+}
+
+// 총 페이지 수 표시
+bannerCnt[bannerCnt.length-1].innerText = totalSlides;
+
+function showSlideBanner(index){
+  // clientWidth : 보더, 마진 불포함하는 요소의 너비를 픽셀 단위로 반환
+  const slideWidth = document.querySelector('.banner_slide li').clientWidth;
+  console.log(`-(${index} * ${slideWidth})`);
+  const newTransform = -(index * slideWidth); // -100% > -200% > -300% ...
+
+  // 이동
+  bannerSlides.style.transform = `translateX(${newTransform}px)`; // translateX(-100%) > translateX(-200%) > translateX(-300%) ...
+  bannerCnt[0].innerText = index+1;
+}
+
+function nextSlide(){
+  bannerSlides.classList.add('animated');
+  if(isBannerAnimating){return;}else{
+    isTransition((currentSlideIdx + 1) % totalSlides)
+    
+    // 자신을 나눴을 때 나머지가 0이되면서 0 할당, 이외에는 last page보다 작은 수기 때문에 나머지는 0이 아닌 수가 나온다.
+    currentSlideIdx = (currentSlideIdx + 1) % totalSlides;
+    console.log(currentSlideIdx);
+    showSlideBanner(currentSlideIdx);
+  }
+}
+function prevSlide(){
+  bannerSlides.classList.add('animated');
+  if(isBannerAnimating){return;}else{
+    isTransition()
+
+    currentSlideIdx = (currentSlideIdx - 1 + totalSlides) % totalSlides;
+    showSlideBanner(currentSlideIdx);
+  }
+}
+
+// setInterval(nextSlide, 3000);
+
 // logo slide =================================================================================
 const logo = document.querySelector('.logo_ul');
 const logoList = document.querySelectorAll('.logo_ul li');
@@ -20,21 +81,40 @@ const logoSlide = () => {
 }
 setInterval(logoSlide, 5000);
 
+// all_menu hover ==============================================================================
+const allMenuDiv = document.querySelector('.all_menu_hover');
+const allMenu = document.querySelectorAll('.nav_li');
+const allMenuHover = ()=>{
+  allMenu[0].addEventListener('mouseenter', ()=>{
+    // console.log('마우스 오버');
+    allMenuDiv.classList.add('on');
+  });
+  allMenu[0].addEventListener('mouseleave', ()=>{
+    // console.log('마우스 아웃');
+    allMenuDiv.classList.remove('on');
+  });
+}
+allMenuHover();
+
 // popular slide ==============================================================================
 const popDiv = document.querySelector('.popular_s');
 const popUl = document.querySelector('.popular_s_ul');
 const popLi = document.querySelectorAll('.popular_s_ul li');
 const popHeight = 30.5; // 각 리스트의 높이
-const popUlTop = popUl.getBoundingClientRect().top; //getBoundingClientRect() : 절대 위치를 구할 수 있다. | 해당 함수로 부모 기준의 상대적 위치를 구할 수 있다.
-let perPopTop = 0; // 각 리스트의 높이를 저장
-let currentPop = 0; // 현재 높이값
 let popCnt = 0; // 리스트의 갯수와 같아지면 초기화
-let calcPop = 0; // 계산된 높이값
 
+//getBoundingClientRect() : 절대 위치를 구할 수 있다. | 해당 함수로 부모 기준의 상대적 위치를 구할 수 있다.
+// 하지만 스크롤을 하면 값이 변하기 때문에,
+// 1. 초기값을 저장해놓고 사용하거나, 
+// 2. offsetTop을 사용하거나,
+// 3. parseFloat()를 사용하여 실수로 변환하여 직관적으로 사용하는 방법이 있다.
+// const popUlTop = popUl.getBoundingClientRect().top; 
+
+
+// 초기 포지션 설정
 const popPosi = () => {
   for(let i=0;i<popLi.length;i++){
-    calcPop = popHeight * i;
-    popLi[i].style.top = calcPop + 'px';
+    popLi[i].style.top = popHeight * i + 'px';
   }
 };
 popPosi(); // 초기 값을 잡아주지 않으면 list가 전부 position 0으로 잡히기 때문에, 초기값을 잡아주는 함수를 만들어준다.
@@ -46,15 +126,15 @@ const popSlide = () => { // 각 리스트의 높이 값 구하기
       popLi[i].style.transition = '';
       popLi[i].style.top = popHeight * i + 'px';
     }
-  }
-  for(let i=0;i<popLi.length;i++){
-    popLi[i].style.transition = '0.5s ease';
-    perPopTop = popLi[i].getBoundingClientRect().top;
-    // 계산된 높이 값 = 각 리스트의 top값 - 부모의 top값 - 리스트의 높이값
-    // 각 리스트의 top 절대 값 - 부모의 top 절대 값 : 각 리스트의 부모로부터의 상대적 위치값
-    // - 리스트의 높이 값 : top을 리스트의 높이값 만큼 올려주기 위해 음수 처리
-    calcPop = (Math.abs(perPopTop) - popUlTop) - (popHeight) + 'px';
-    popLi[i].style.top = calcPop;
+  }else{
+    for(let i=0;i<popLi.length;i++){
+      popLi[i].style.transition = '0.5s ease';
+      // 현재의 top값에서 popHeight만큼 빼준다.
+      // parseFloat() : 문자열을 실수로 변환 (예: '10px' > 10)
+      popLi[i].style.top = parseFloat(popLi[i].style.top) - popHeight + 'px';
+      // 또는 아래처럼 offsetTop을 사용하여 부모의 위치를 기준으로 상대적인 위치를 구할 수 있다.
+      // popLi[i].style.top = (popLi[i].offsetTop - popUl.offsetTop - popHeight) + 'px';
+    }
   }
   popCnt++;
 };
